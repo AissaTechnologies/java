@@ -1,0 +1,11 @@
+jqhawk("#form_4_01_02 #h66").mask("99/99/9999");
+jqhawk("#form_4_01_02 #h66").datepicker({ 
+	dateFormat: 'dd/mm/yy',
+	showOn: "button",
+	buttonImage: '/Hawk-theme/images/hawk/calendario.png',
+	buttonImageOnly: true,
+	changeMonth: true,
+	changeYear: true			
+});
+jqhawk("#form_4_01_02 #h66").datepicker( "option", jqhawk.datepicker.regional[ "it" ] );
+jqhawk("#form_4_01_02 #h66").val( new Date().format('d/m/Y'));

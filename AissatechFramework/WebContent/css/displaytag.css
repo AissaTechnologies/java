@@ -1,0 +1,201 @@
+tr.festivo td {
+	color: black;
+	font-weight: normal;
+	background-color: #fc8113;/*per uniformità di colore con i pulsanti del menù*/
+}
+
+.festivo
+{
+	color: black;
+	/*font-weight: normal;*/
+	font-weight: bold;
+	
+}
+
+tr.TbFestivo td {
+	color: green;
+	font-weight: normal;
+}
+
+.TbFestivo
+{
+	color: green;
+	font-weight: normal;
+}
+
+table {
+	border: 0px solid #000;
+	align: center;
+	width: 75%;
+	margin: 6px 0 6px 0 !important;
+
+}
+
+th, td{
+	padding: 2px 4px 2px 4px !important;
+	text-align: left;
+	vertical-align: top;
+	border: 0px solid #000;
+}
+
+thead tr {/*testata colonne displaytag*/
+	background-color: #bbb;	
+	color: black;
+	text-decoration: underline;
+}
+
+th.sorted {
+	/*background-color: #999;*/
+	background-color: #898989;
+}
+
+th a,th a:visited {
+	color: black;
+}
+
+th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+th.sortable a {
+	background-image: url(../images/arrow_off.png);
+}
+
+th.order1 a {	
+	background-image: url(../images/arrow_down.png);
+
+}
+
+th.order2 a {
+	background-image: url(../images/arrow_up.png);
+
+}
+
+tr.odd {
+	/*background-color: #d3d3d3;*/ /******riga dispari*******/
+	background-color: #eee;/*per uniformità di colore con i link del menù*/
+}
+tr.odd a {
+	background-color: #D0D0D0;
+}
+tr.tableRowEven,tr.even {
+	background-color: #fff; /******riga pari******/
+}
+
+tr.tableRowEven,tr.even a {
+	background-color: #D0D0D0; 
+}
+
+#CAMELIA, DISPLAYTAG STYLE "SIMPLE"
+table.simple thead tr th {	
+	background-color: #eee;
+}
+
+table.simple tr.even {
+	background-color: #fff;
+}
+
+table.simple {
+	border: 1px solid #898989;
+	border-collapse: collapse;
+}
+
+table.simple td,table.simple th {
+	border: 1px solid #898989;
+}
+#FINE CAMELIA
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 79%;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+}
+
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+}
+
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+}
+
+span.rtf {
+	background-image: url(../images/ico_file_rtf.png);
+}
+
+span.pagebanner {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 100%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+}
+
+span.pagelinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 100%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+}
+
+
+.group-1 {
+    font-weight:bold;
+    padding-bottom:10px;
+    border-top:1px solid black;
+}
+.group-2 {
+    font-style:italic;
+    border-top: 1px solid black;
+
+}
+.subtotal-sum, .grandtotal-sum {
+    font-weight:bold;
+    text-align:right;
+}
+.subtotal-header {
+    padding-bottom: 0px;
+    border-top: 1px solid white;
+}
+.subtotal-label, .grandtotal-label {
+    border-top: 1px solid white;
+    font-weight: bold;
+}
+.grouped-table tr.even {
+    background-color: #fff;
+}
+.grouped-table tr.odd {
+    background-color: #fff;
+}
+.grandtotal-row {
+    border-top: 2px solid black;
+}

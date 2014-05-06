@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+     classpath:org/springframework/beans/factory/xml/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/tx 
+     classpath:org/springframework/transaction/config/spring-tx-2.0.xsd
+    http://www.springframework.org/schema/aop 
+     classpath:org/springframework/aop/config/spring-aop-2.0.xsd">
+    
+    <!-- dao -->
+     <bean id="anagraficaService" class="com.aissa.aissatech.dao.AnagraficaServiceImpl" />
+     <bean id="profiloService" class="com.aissa.aissatech.dao.ProfiloServiceImpl" />
+    <bean id="loginService" class="com.aissa.aissatech.dao.LoginServiceImpl" />         
+    <bean id="funzioneService" class="com.aissa.aissatech.dao.FunzioneServiceImpl" />    
+    <bean id="abilitazioneService" class="com.aissa.aissatech.dao.AbilitazioneServiceImpl" />     
+  
+    
+    <!-- action -->
+    <bean id="anagraficaAction" scope="request"
+        class="com.aissa.aissatech.action.AnagraficaAction">
+        <constructor-arg ref="anagraficaService" />
+    </bean>
+    
+    <bean id="profiloAction" scope="request"
+        class="com.aissa.aissatech.action.ProfiloAction">
+        <constructor-arg ref="profiloService" />
+    </bean>
+    
+    <bean id="loginAction" scope="request"
+        class="com.aissa.aissatech.action.LoginAction">
+        <constructor-arg ref="loginService" /><!-- si inietta la dipendenza tramite il costruttore -->
+    </bean>
+    
+    <bean id="utenteAction" scope="request"
+        class="com.aissa.aissatech.action.UtenteAction">
+        <constructor-arg ref="loginService" />       
+    </bean>    
+    
+    <bean id="funzioneAction" scope="request"
+        class="com.aissa.aissatech.action.FunzioneAction">
+        <constructor-arg ref="funzioneService" />
+    </bean>    
+    
+    <bean id="abilitazioneAction" scope="request"
+        class="com.aissa.aissatech.action.AbilitazioneAction">
+        <constructor-arg ref="abilitazioneService" />
+    </bean>    
+    
+    <bean id="logoutAction" scope="request"
+        class="com.aissa.aissatech.action.LogoutAction">       
+    </bean>   
+
+</beans>

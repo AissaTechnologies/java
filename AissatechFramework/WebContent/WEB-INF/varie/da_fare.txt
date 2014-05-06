@@ -1,0 +1,13 @@
+DA FARE SUI PROGETTI JAVA:
+
+1. validation dei form - preferibilmente con JQuery (in ultima istanza Struts 2 o Javascript) 
+2. front end carino con JQuery (principalmente componenti delle form - textfield, select, buttons ecc.). 
+	Bypassare i componenti form di Struts 2. JSTL? Passaggio dati con JQuery
+3. navigazione tra le pagine ed action usando i div, AJAX e JQuery. A questo punto non serve l'interceptor Navigazione
+4. per le liste, continuare a usare Displaytag - da sistemare l'export. Oppure usare le grid del plugin struts2-grid-jquery, 
+	che non hanno però l'export
+5. report con iReport by JasperReport o Birt?
+6. sistemare il datepicker - formato del calendario: dd/mm/yy  !!!OK, FATTO!!!
+7. sistemare il datepicker locale - it
+8. perché non funzionano glia ActionMessages?
+9. interfacce generiche per i metodi ricerca, ricercaPerId, lista, salva, aggiorna, cancella !! provato, ma non funziona la IoC

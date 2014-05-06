@@ -1,0 +1,108 @@
+/*** CSS GLOBALE ***/
+
+
+body {
+	margin: 100px 40px 10px 70px;
+	font-family: zekton;
+	font-size: 12px;
+	color: #643264;
+}
+
+/* LISTE */
+
+/*ul{
+	text-align:left;	
+	font-weight:bold;	
+}*/
+/*ul#list{	
+	text-align:left;
+	font-weight:bold;
+	padding:30px 15px 30px 15px;
+}
+li{	
+	font-size:16px;
+	position:static;
+}
+ul#sublist{
+	padding:10px 15px 10px 15px;
+}*/
+
+/* ELEMENTI FORM */
+
+table{
+	/*width:100%;*/
+	vertical-align:middle;
+	text-align:left;
+}
+
+table#benvenuto{
+	 align: center;
+	 border: 0px; 
+	 /*width: 100%;*/
+	 width: 924px; 
+	 height:90%;
+}
+
+td{
+	font-size:14px;
+}
+
+/*.pulsanti{
+	text-align:left;
+	width:400px;
+	height:50px;	
+}*/
+
+th{
+	text-align:left;
+	background-color:#BFBFBF;
+	font-size:14px;
+}
+
+label{
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+	width:30px;
+}
+
+
+select{
+	width:150px;	
+}
+
+textarea{
+	width:550px;	
+}
+
+.submit {
+	
+}
+submit#confirm {
+	width:50px;
+	height:30px;
+	color:red;
+}
+
+.actionMessage {
+	color:red;
+}
+
+
+/* LINK */
+
+/* unvisited link */
+/*a:link {color:#FF0000;}*/
+a:link {color:#D2C828;}
+
+/* visited link */    
+/*a:visited {color:#20217E;}*/
+a:visited {color:#D23C0A;}
+
+/* mouse over link */
+/*a:hover {text-decoration: underline overline; color:#BFBFBF;}*/
+a:hover {color:#821446;}
+
+/* selected link */  
+/*a:active {color:red;}*/
+a:active {color:#008200;}

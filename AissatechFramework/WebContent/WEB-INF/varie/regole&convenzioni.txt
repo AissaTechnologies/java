@@ -1,0 +1,52 @@
+Funzionamento framework:
+1. ABILITAZIONI
+	Solo l'amministratore può abilitare le funzioni, associando il path della funzione al tipo di profilo (flagTipoProfilo).
+	L'admin può essere abilitato per tutte le funzioni, gli altri solo per le liste (il codice funzione inizia per LIST) e per 
+	la ricerca (funzioni che iniziano per RIC).
+	
+	NOTA. Nell'inserimento di una nuova abilitazione, inizialmente è stato pensato di caricare (e di associare) solo la lista delle 
+	funzioni non ancora abilitate. Non si risolve in questo modo però, il problema dell'abilitazione della stessa funzione da parte 
+	di più tipologie di profilo (nelle liste, per esempio, si possono abilitare tutti gli utenti). 
+	A questo punto si caricano le 2 combo (path funzione e profilo) con tutti i dati, senza filtro, però si fa la cernita nella action: 
+	controllo se il codice funzione inizia per LIST o RIC, allora si va a controllare il profilo, activando un messaggio nel caso in cui 
+	si tenta di inserire dati che già ci sono.
+	
+2. UTENTE
+	L'inserimento di un nuovo utente, oppure la modifica dei dati riguardante l'utente (inclusa pwd) avviene solo tramite la 
+	registrazione/modifica da parte dell'interessato.
+	L'admin può visualizzare la lista degli utenti (con o senza filtro di ricerca).
+	
+3. Riferimento ai schema xsd di spring framework:
+	3.1. con connessione Internet:
+	<beans xmlns="http://www.springframework.org/schema/beans"
+    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	xmlns:aop="http://www.springframework.org/schema/aop"
+    	xmlns:tx="http://www.springframework.org/schema/tx"
+    	xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans 
+    		http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    	http://www.springframework.org/schema/tx 
+    		http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+    	http://www.springframework.org/schema/aop 
+    		http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	3.2. senza connessione Internet - i files xsd si trovano nel spring.jar. Si fa riferimento usando la parola chiave "classpath:org/springframework/.."
+	<beans xmlns="http://www.springframework.org/schema/beans"
+    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	xmlns:aop="http://www.springframework.org/schema/aop"
+    	xmlns:tx="http://www.springframework.org/schema/tx"
+    	xsi:schemaLocation="
+    		http://www.springframework.org/schema/beans 
+     			classpath:org/springframework/beans/factory/xml/spring-beans-2.0.xsd
+    		http://www.springframework.org/schema/tx 
+     			classpath:org/springframework/transaction/config/spring-tx-2.0.xsd
+    		http://www.springframework.org/schema/aop 
+     			classpath:org/springframework/aop/config/spring-aop-2.0.xsd">
+
+Convenzioni:
+
+Nel struts.xml:
+1. result name="success" - è andato tutto a buon fine
+2. result name="input" - errore si salvataggio/aggiornamento per dati incongruenti (tipo di dato errato), mancanza di certi requisiti 
+	(mancanza dati di input) o per errore di dati di confronto con il db (dati già esistenti). 
+	Si dovrebbe inserire il messaggio corrispondente.
+3. result name="error" - eccezione di qualsiasi tipo

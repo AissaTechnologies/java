@@ -1,0 +1,32 @@
+/*** LO STILE DI BASE ***/
+
+/* 1 DIV BASE_TEMPLATE */
+.base_template{
+	width:100%;
+	height:100%;	
+	padding: 0px;		
+	color: #000;
+	vertical-align:top;
+}
+
+/* 1.1 DIV TEMPLATE */
+.template{
+	width:99%;
+	height:95%;	
+	color: #000;
+	vertical-align:top;
+}
+
+/* 1.2 DIV FOOTER */
+.footer{		
+	text-align:center;
+	font-family: zekton;
+	width:99%;
+	height:5%;	
+	color: #000;
+	vertical-align:top;
+}
+
+
+
+

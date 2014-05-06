@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="com/aissa/aissatech/bundle/global-messages" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+    <package name="aissatech" extends="struts-default">
+    
+    <global-results>
+    	<result name="logout">index.jsp</result>
+    </global-results>
+    
+    
+    <!-- ====================================== -->
+    <!-- =========== LOGIN/LOGOUT ============= -->
+    <!-- ====================================== -->
+    
+    <action name="login" class="com.aissa.aissatech.action.LoginAction" method="validazioneInput">    	
+    	<result name="input">index.jsp</result>
+    	<result>benvenuto.jsp</result>
+    	<result name="nonregistrato">registrazione.jsp</result>    	
+    </action>
+    
+    <action name="logout" class="com.aissa.aissatech.action.LogoutAction" method="execute">
+    	<result>index.jsp</result>
+    </action>
+
+    
+    <!-- ==================================================== -->
+    <!-- ===================== ANAGRAFICA =================== -->
+    <!-- ==================================================== -->
+    
+   	<action name="presentaAnagrafica" method="presenta" class="anagraficaAction">
+   		<result>/WEB-INF/jsp/anagrafica/ricercaAnagrafica.jsp</result>    
+   	</action>
+   	
+    <action name="ricercaAnagrafica" method="ricerca" class="anagraficaAction">
+    	<result>/WEB-INF/jsp/anagrafica/listaAnagrafica.jsp</result>
+    </action>
+    
+    <action name="inserisciAnagrafica" method="inserisci" class="anagraficaAction">
+    	<result>/WEB-INF/jsp/anagrafica/inserisciAnagrafica.jsp</result>
+    </action>
+    
+    <action name="salvaAnagrafica" method="salva" class="anagraficaAction">
+    	<result>/WEB-INF/jsp/anagrafica/listaAnagrafica.jsp</result>
+    	<result name="input">/WEB-INF/jsp/anagrafica/inserisciAnagrafica.jsp</result>
+    	<result name="error">/WEB-INF/jsp/error.jsp</result>
+    </action>
+    
+    <action name="modificaAnagrafica" method="modifica" class="anagraficaAction">
+    	<result>/WEB-INF/jsp/anagrafica/modificaAnagrafica.jsp</result>
+    </action>
+    
+    <action name="aggiornaAnagrafica" method="aggiorna" class="anagraficaAction">
+    	<result>/WEB-INF/jsp/anagrafica/listaAnagrafica.jsp</result> 
+    	<result name="input">/WEB-INF/jsp/anagrafica/modificaAnagrafica.jsp</result>   	
+    	<result name="error">/WEB-INF/jsp/error.jsp</result>
+    </action>
+    
+    <action name="cancellaAnagrafica" method="cancella" class="anagraficaAction">
+    	<result>/WEB-INF/jsp/anagrafica/listaAnagrafica.jsp</result>    	
+    </action>
+   	
+   	<!-- ===================================================== -->
+    <!-- =================== LISTA UTENTI ==================== -->
+    <!-- ===================================================== -->
+    
+    <action name="presentaUtente" method="ricerca" class="utenteAction">
+   		<result>/WEB-INF/jsp/utente/ricercaUtente.jsp</result>    
+   	</action>
+   	
+   	<action name="ricercaUtente" method="ricerca" class="utenteAction">
+   		<result>/WEB-INF/jsp/utente/listaUtente.jsp</result>
+   		<result name="input">/WEB-INF/jsp/utente/ricercaUtente.jsp</result>   
+   	</action>
+    
+    <action name="listaUtente" method="lista" class="utenteAction">
+   		<result>/WEB-INF/jsp/utente/listaUtente.jsp</result>    
+   	</action>
+   	
+   	<action name="inserisciUtente" method="inserisci" class="utenteAction">
+   		<result>/WEB-INF/jsp/utente/inserisciUtente.jsp</result>    
+   	</action>
+   	
+   	<action name="salvaUtente" method="salva" class="utenteAction">
+   		<result>okReg.jsp</result>
+   		<result name="erroreReg">erroreReg.jsp</result>
+   	</action>
+   	
+   	<action name="modPwdUtente" method="modPwd" class="utenteAction">
+   		<result>okModPwd.jsp</result>
+   		<result name="input">/WEB-INF/jsp/utente/modPwdUtente.jsp</result>    
+   	</action>
+   	
+    
+    <!-- ===================================================== -->
+    <!-- ================== LISTA FUNZIONI =================== -->
+    <!-- ===================================================== -->
+   	
+   	<action name="presentaFunzione" method="presenta" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/ricercaFunzione.jsp</result>    
+   	</action>
+   	
+    <action name="ricercaFunzione" method="ricerca" class="funzioneAction">    	
+    	<result>/WEB-INF/jsp/funzione/listaFunzione.jsp</result>
+    </action>
+    
+   <action name="listaFunzione" method="lista" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/listaFunzione.jsp</result>    
+   	</action>
+    
+    <action name="inserisciFunzione" method="inserisci" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/inserisciFunzione.jsp</result>   		  
+   	</action>
+   	
+   	<action name="salvaFunzione" method="salva" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/listaFunzione.jsp</result>
+   		<result name="input">/WEB-INF/jsp/funzione/inserisciFunzione.jsp</result> 
+   		<result name="error">/WEB-INF/jsp/error.jsp</result>     
+   	</action>
+   	
+   	<action name="modificaFunzione" method="modifica" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/modificaFunzione.jsp</result>   		  
+   	</action>
+   	
+   	<action name="aggiornaFunzione" method="aggiorna" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/listaFunzione.jsp</result>
+   		<result name="input">/WEB-INF/jsp/funzione/modificaFunzione.jsp</result>
+   		<result name="error">/WEB-INF/jsp/error.jsp</result>      
+   	</action>
+   	
+   	<action name="cancellaFunzione" method="cancella" class="funzioneAction">
+   		<result>/WEB-INF/jsp/funzione/listaFunzione.jsp</result>   		     
+   	</action>
+    
+    
+    <!-- ===================================================== -->
+    <!-- =================== LISTA PROFILI =================== -->
+    <!-- ===================================================== -->
+
+   	<action name="listaProfilo" method="lista" class="profiloAction">
+   		<result>/WEB-INF/jsp/profilo/listaProfilo.jsp</result>    
+   	</action>
+   	
+   	<action name="inserisciProfilo" method="inserisci" class="profiloAction">
+   		<result>/WEB-INF/jsp/profilo/inserisciProfilo.jsp</result>   		  
+   	</action>
+   	
+   	<action name="salvaProfilo" method="salva" class="profiloAction">
+   		<result>/WEB-INF/jsp/profilo/listaProfilo.jsp</result>
+   		<result name="input">/WEB-INF/jsp/profilo/inserisciProfilo.jsp</result>
+   		<result name="error">/WEB-INF/jsp/error.jsp</result>      
+   	</action>
+   	
+   	<action name="modificaProfilo" method="modifica" class="profiloAction">
+   		<result>/WEB-INF/jsp/profilo/modificaProfilo.jsp</result>   		  
+   	</action>
+   	
+   	<action name="aggiornaProfilo" method="aggiorna" class="profiloAction">
+   		<result>/WEB-INF/jsp/profilo/listaProfilo.jsp</result>
+   		<result name="input">/WEB-INF/jsp/profilo/modificaProfilo.jsp</result> 
+   		<result name="error">/WEB-INF/jsp/error.jsp</result>     
+   	</action>
+   	
+   	<action name="cancellaProfilo" method="cancella" class="profiloAction">
+   		<result>/WEB-INF/jsp/profilo/listaProfilo.jsp</result>   		     
+   	</action>
+
+   	
+   	<!-- ===================================================== -->
+    <!-- =================== ABILITAZIONI ==================== -->
+    <!-- ===================================================== -->
+   	
+   	<action name="presentaAbilitazione" method="presenta" class="abilitazioneAction">
+   		<result>/WEB-INF/jsp/abilitazione/ricercaAbilitazione.jsp</result>    
+   	</action>
+   	
+    <action name="ricercaAbilitazione" method="ricerca" class="abilitazioneAction">
+    	<result>/WEB-INF/jsp/abilitazione/listaAbilitazione.jsp</result>
+    </action>
+    
+   	<action name="listaAbilitazione" method="lista" class="abilitazioneAction">
+   		<result>/WEB-INF/jsp/abilitazione/listaAbilitazione.jsp</result>    
+   	</action>
+    
+    <action name="inserisciAbilitazione" method="inserisci" class="abilitazioneAction">
+    	<result>/WEB-INF/jsp/abilitazione/inserisciAbilitazione.jsp</result>
+    </action>
+    
+    <action name="salvaAbilitazione" method="salva" class="abilitazioneAction">
+    	<result>/WEB-INF/jsp/abilitazione/listaAbilitazione.jsp</result>
+    	<result name="input">/WEB-INF/jsp/abilitazione/inserisciAbilitazione.jsp</result>
+    	<result name="error">/WEB-INF/jsp/error.jsp</result>
+    </action>
+    
+    <action name="modificaAbilitazione" method="modifica" class="abilitazioneAction">
+    	<result>/WEB-INF/jsp/abilitazione/modificaAbilitazione.jsp</result>
+    </action>
+    
+    <action name="aggiornaAbilitazione" method="aggiorna" class="abilitazioneAction">
+    	<result>/WEB-INF/jsp/abilitazione/listaAbilitazione.jsp</result>
+    	<result name="input">/WEB-INF/jsp/abilitazione/modificaAbilitazione.jsp</result>
+    	<result name="error">/WEB-INF/jsp/error.jsp</result>
+    </action>
+    
+    <action name="cancellaAbilitazione" method="cancella" class="abilitazioneAction">
+    	<result>/WEB-INF/jsp/abilitazione/listaAbilitazione.jsp</result>
+    </action>
+
+    </package>
+
+</struts>
